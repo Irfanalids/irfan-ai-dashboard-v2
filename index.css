@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.kpi-card {
+  @apply bg-white rounded-2xl p-5 shadow-sm border border-slate-100;
+}
+
+.chart-container {
+  @apply bg-white rounded-2xl p-6 shadow-sm border border-slate-100;
+}
+
+.data-table {
+  @apply w-full text-sm;
+}
+
+.data-table thead tr {
+  @apply border-b border-slate-100;
+}
+
+.data-table thead th {
+  @apply text-left py-3 px-3 text-xs font-semibold uppercase tracking-wider text-slate-400;
+}
+
+.data-table tbody tr {
+  @apply border-b border-slate-50 hover:bg-slate-50 transition-colors;
+}
+
+.data-table tbody td {
+  @apply py-3 px-3 text-slate-600;
+}
+
+.data-table tbody tr:last-child {
+  @apply border-b-0;
+}
+
+.ai-btn {
+  @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all;
+  background: linear-gradient(135deg, #D4AF37, #B8960A);
+  color: white;
+}
+
+.ai-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212,175,55,0.4);
+}
+
+.tab-active {
+  color: #D4AF37;
+  border-bottom: 2px solid #D4AF37;
+}
+
+.tab-inactive {
+  @apply text-slate-400 border-b-2 border-transparent hover:text-slate-600;
+}
+
+.status-green {
+  @apply bg-emerald-50 text-emerald-700;
+}
+
+.status-amber {
+  @apply bg-amber-50 text-amber-700;
+}
+
+.status-red {
+  @apply bg-red-50 text-red-700;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #D4AF37, #B8960A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pulse-dot {
+  @apply inline-block w-2 h-2 rounded-full bg-emerald-400;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.modal-overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-box {
+  @apply bg-white rounded-2xl p-6 w-full max-w-2xl max-h-[80vh] overflow-y-auto shadow-2xl;
+}
+
+.edit-hint {
+  @apply text-xs text-slate-400 bg-amber-50 border border-amber-100 rounded-lg px-4 py-2 inline-block;
+}
